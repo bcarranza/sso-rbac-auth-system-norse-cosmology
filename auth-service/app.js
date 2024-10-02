@@ -94,10 +94,6 @@ app.get("/verifyToken", async (req, res) => {
 
     res.send(data);
   } catch (error) {
-    console.log ("hola, falle en el verify token");
-    //console.log (`secret: ${secret}`);
-    //console.log (`tenant: ${tenant}`);
-    //console.log (`accessToken: ${accessToken}`);
     console.log(`URL: ${process.env.KEYCLOAK_AUTH_SERVER_URL}/realms/${tenant}/protocol/openid-connect/token/introspect`)
     console.log(error.message);
     res.status(401).send(error.message);
